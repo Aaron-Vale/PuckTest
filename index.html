@@ -10,13 +10,11 @@
   <script>
   // Called when we get a line of data - updates the light color
   function onLine(line) {
-    try {
-      var j = JSON.parse(line);
-      console.log("Received JSON: ",j);
-      elements.light.setValue(j.light*100);
-    } catch(e) {
-      console.log("Received: ",line);
-    }
+      const pressed = BTN.read();
+      if (pressed) {
+       alert('pressed!');
+      }
+    }, 500);
   }
   var connection;
   function connectDevice() {
